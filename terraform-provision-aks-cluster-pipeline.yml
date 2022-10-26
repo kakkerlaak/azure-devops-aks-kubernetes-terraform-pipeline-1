@@ -16,11 +16,11 @@ stages:
       - task: PublishPipelineArtifact@1
         displayName: Publish Artifacts
         inputs:
-          targetPath: '$(System.DefaultWorkingDirectory)/terraform-manifests'
-          artifact: 'terraform-manifests-out'
-          publishLocation: 'pipeline'
+         targetPath: '$(System.DefaultWorkingDirectory)/terraform-manifests'
+         artifact: 'terraform-manifests-out'
+         publishLocation: 'pipeline'
       - task: TerraformInstaller@0
-        displayName: Terraform Install
+        displayName: TerraformInstaller
         inputs:
           terraformVersion: 'latest'
       - task: TerraformCLI@0
@@ -40,4 +40,7 @@ stages:
         inputs:
           command: 'validate'
           workingDirectory: '$(System.DefaultWorkingDirectory)/terraform-manifests'
-          allowTelemetryCollection: false 
+          allowTelemetryCollection: false
+      
+      
+    
