@@ -54,15 +54,14 @@ role_based_access_control {
 
 # Windows Admin Profile
 windows_profile {
-  admin_username            = var.windows_admin_username
-  admin_password            = var.windows_admin_password
+  admin_username            = "rootadmin"
+  admin_password            = "rootadmin@321"
 }
 
 # Linux Profile
 linux_profile {
   admin_username = "ubuntu"
-  ssh_key {
-      key_data = file(var.ssh_public_key)
+  admin_password ="Vikramteja@321"
   }
 }
 
